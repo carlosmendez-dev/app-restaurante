@@ -8,20 +8,24 @@
 </head>
 <body class="bg-slate-100 h-screen flex justify-center items-center">
 
-<div class="bg-white border shadow-lg rounded-lg p-6    max-w-[70%] w-full md:max-w-[1200px]">
-    <!-- Título del card -->
-    <h1 class="text-3xl font-bold text-center mb-6">Estado de Mesas</h1>
+<x-ui.card>
 
-    <!-- Lista de mesas en formato horizontal y centrado -->
-    <div class="flex justify-center gap-5 overflow-x-auto">
-        <x-ui.card-mesa mesa="1" ocupado="false"></x-ui.card-mesa>
-        <x-ui.card-mesa mesa="2" ocupado="true"></x-ui.card-mesa>
-        <x-ui.card-mesa mesa="3" ocupado="true"></x-ui.card-mesa>
-        <x-ui.card-mesa mesa="4" ocupado="false"></x-ui.card-mesa>
-        <x-ui.card-mesa mesa="5" ocupado="false"></x-ui.card-mesa>
-        <x-ui.card-mesa mesa="6" ocupado="true"></x-ui.card-mesa>
+    <div class="flex flex-col">
+        <!-- Título del card -->
+        <h1 class="text-3xl font-bold text-center mb-6">Seleccionar Mesa</h1>
+        <!-- Lista de mesas en formato horizontal y centrado -->
+        <div class="flex justify-center items-center gap-5 flex-wrap">
+            <x-ui.card-mesa mesa="1" ocupado="false"></x-ui.card-mesa>
+            <x-ui.card-mesa mesa="2" ocupado="true"></x-ui.card-mesa>
+            <x-ui.card-mesa mesa="3" ocupado="true"></x-ui.card-mesa>
+            <x-ui.card-mesa mesa="4" ocupado="false"></x-ui.card-mesa>
+            <x-ui.card-mesa mesa="5" ocupado="false"></x-ui.card-mesa>
+            <x-ui.card-mesa mesa="6" ocupado="true"></x-ui.card-mesa>
+        </div>
     </div>
-</div>
+    
+</x-ui.card>
+
 
 </body>
 </html>
