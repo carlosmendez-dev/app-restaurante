@@ -7,6 +7,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// rutas para probar vistas
+Route::get("/seleccionar-sucursal",function(){return view("seleccionar-sucursal");});
+Route::get("/menu",function(){return view("menu");});
+Route::get("/seleccionar-mesa",function(){return view("seleccionar-mesa");});
+Route::get("/registrar-cliente",function(){return view("registrar-cliente");});
+Route::get("/lista-productos",function(){return view("lista-productos");});
+Route::get("/realizar-pago",function(){return view("realizar-pago");});
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
