@@ -9,11 +9,11 @@
 <body class="h-screen bg-gray-100 flex justify-center items-center">
     
 <x-ui.card>
-        <h1 class="text-center text-xl" >Seleccionar Sucursal</h1> <br>
-        <form action="" class="flex justify-center items-center flex-col gap-2">
-            <x-ui.btnsucursal class="w-full"><i class="bi bi-shop"></i>Sucursal1</x-ui.btnsucursal>
-            <x-ui.btnsucursal class="w-full"><i class="bi bi-shop"></i>Sucursal2</x-ui.btnsucursal>
-            <x-ui.btnsucursal class="w-full"><i class="bi bi-shop"></i>Sucursal3</x-ui.btnsucursal>
+    <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
+            <h1 class="text-center text-xl" >Seleccionar Sucursal</h1> <br>
+            <x-ui.btn-menu><i class="bi bi-shop"></i>Sucursal1</x-ui.btnsucursal>
+            <x-ui.btn-menu><i class="bi bi-shop"></i>Sucursal2</x-ui.btnsucursal>
+            <x-ui.btn-menu><i class="bi bi-shop"></i>Sucursal3</x-ui.btnsucursal>
         </form>
     </x-ui.card> 
 </body>

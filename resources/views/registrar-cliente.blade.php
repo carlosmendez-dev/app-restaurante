@@ -8,11 +8,10 @@
 </head>
 <body class="h-screen bg-gray-100 flex justify-center items-center">
     <x-ui.card>
-    <h1 class="text-center text-xl ">Registar al Cliente</h1> <br>
-        <form action="" class="flex justify-center items-center flex-col gap-2">
-            
-            <input type="text" placeholder="Cliente">
-            <x-ui.btn class="w-full">iniciar sesión</x-ui.btn>
+        <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
+            <h1 class="text-center text-xl ">Registar Cliente</h1> <br>
+            <input type="text" placeholder="Nombre" class="w-full">
+            <x-ui.btn>Registrar</x-ui.btn>
         </form>
     </x-ui.card>
 </body>
