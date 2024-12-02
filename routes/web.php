@@ -17,9 +17,9 @@ Route::get("/realizar-pago",function(){return view("realizar-pago");});
 Route::get("/administrar",function(){return view("administrar");});
 Route::get("/administrar-mesas",function(){return view("administrar-mesas");});
 Route::get("/administrar-platos",function(){return view("administrar-platos");});
-Route::get("/administrar-clientes",function(){return view("administra-clientesr");});
-Route::get("/administrar-establecimientos",function(){return view("administ-establecimientosrar");});
-Route::get("/administrar-empleados",function(){return view("administ-estempleados");});
+Route::get("/administrar-clientes",function(){return view("administrar-clientes");});
+Route::get("/administrar-establecimientos",function(){return view("administrar-establecimientos");});
+Route::get("/administrar-empleados",function(){return view("administrar-empleados");});
 
 
 Route::get('/dashboard', function () {

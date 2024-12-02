@@ -12,8 +12,8 @@
     <x-ui.card>
         <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
             <h1 class="text-center text-xl">Menú de Usuario</h1> <br>
-            <x-ui.btn-menu><i class="bi bi-file-person"></i> Empleado</x-ui.btnsucursal>
-            <x-ui.btn-menu><i class="bi bi-gear"></i>Administrador</x-ui.btnsucursal>
+            <x-ui.btn-menu link="seleccionar-mesa"><i class="bi bi-file-person"></i> Empleado</x-ui.btnsucursal>
+            <x-ui.btn-menu link="administrar"><i class="bi bi-gear"></i>Administrador</x-ui.btnsucursal>
         </form>
     </x-ui.card>
 </html>
