@@ -7,6 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-slate-100 h-screen flex justify-center items-center">
+    <x-ui.btn-atras atras="menu"></x-ui>
 <x-ui.card>
     <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
             <h1 class="text-center text-xl" >Menú de Administración</h1> <br>
