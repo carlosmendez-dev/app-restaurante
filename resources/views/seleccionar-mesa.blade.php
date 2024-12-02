@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-slate-100 h-screen flex justify-center items-center">
-
+<x-ui.btn-back atras="menu"></x-ui>
 <x-ui.card>
 
     <div class="flex flex-col">

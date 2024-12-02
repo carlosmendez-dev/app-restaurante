@@ -8,6 +8,7 @@
 </head>
 
 <body class="h-screen bg-gray-100 flex justify-center items-center">
+<x-ui.btn-back atras="seleccionar-mesa"></x-ui>
     <x-ui.card>
         <!--Titulo de Card-->
         <h1 class="text-center text-xl">Lista de Productos</h1>
