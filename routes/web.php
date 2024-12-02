@@ -20,7 +20,7 @@ Route::get("/administrar-platos",function(){return view("administrar-platos");})
 Route::get("/administrar-clientes",function(){return view("administrar-clientes");});
 Route::get("/administrar-establecimientos",function(){return view("administrar-establecimientos");});
 Route::get("/administrar-empleados",function(){return view("administrar-empleados");});
-
+Route::get("/lista-productos",function(){return view("lista-productos");});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
