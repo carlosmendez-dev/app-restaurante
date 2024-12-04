@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('mesas', function (Blueprint $table) {
             $table->id();
             $table->integer("numero");
+            $table->boolean("disponible");
             $table->timestamps();
         });
     }
