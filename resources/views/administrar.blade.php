@@ -10,11 +10,11 @@
     <x-ui.btn-back atras="menu"></x-ui>
 <x-ui.card>
     <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
-            <h1 class="text-center text-xl" >Menú de Administración</h1> <br>
-            <x-ui.btn-menu link="administrar-mesas"><i class="bi bi-file"></i>Mesas</x-ui.btn-menu>
-            <x-ui.btn-menu link="administrar-platos"><i class="bi bi-cup-straw"></i>Platos</x-ui.btn-menu>
-            <x-ui.btn-menu link="administrar-establecimientos"><i class="bi bi-shop"></i>Establecimientos</x-ui.btn-menu>
-            <x-ui.btn-menu link="administrar-empleados"><i class="bi bi-person-vcard"></i>Empleados</x-ui.btn-menu>
+            <h1 class="text-center text-xl">Menú de Administración</h1> <br>
+            <x-ui.btn-menu link="editar-mesas"><i class="bi bi-file"></i>Mesas</x-ui.btn-menu>
+            <x-ui.btn-menu link="editar-platos"><i class="bi bi-cup-straw"></i>Platos</x-ui.btn-menu>
+            <x-ui.btn-menu link="editar-establecimiento"><i class="bi bi-shop"></i>Establecimientos</x-ui.btn-menu>
+            <x-ui.btn-menu link="editar-empleados"><i class="bi bi-person-vcard"></i>Empleados</x-ui.btn-menu>
             <x-ui.btn-menu link="administrar-clientes"><i class="bi bi-pin-fill"></i>Clientes</x-ui.btn-menu>
         </form>
     </x-ui.card> 

@@ -20,6 +20,10 @@ Route::get("/administrar-platos",function(){return view("administrar-platos");})
 Route::get("/administrar-clientes",function(){return view("administrar-clientes");});
 Route::get("/administrar-establecimientos",function(){return view("administrar-establecimientos");});
 Route::get("/administrar-empleados",function(){return view("administrar-empleados");});
+Route::get("/editar-mesas",function(){return view("editar-mesas");});
+Route::get("/editar-platos",function(){return view("editar-platos");});
+Route::get("/editar-establecimiento",function(){return view("editar-establecimiento");});
+Route::get("/editar-empleados",function(){return view("editar-empleados");});
 Route::get("/lista-productos",function(){return view("lista-productos");});
 
 Route::get('/dashboard', function () {
