@@ -7,14 +7,41 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="h-screen bg-gray-100 flex justify-center items-center">
-    <x-ui.btn-back atras="editar-platos"></x-ui>
+<x-ui.btn-add add="registrar-platos">Agregar Platos</x-ui>
+<x-ui.btn-back atras="administrar"></x-ui>
     <x-ui.card>
-        <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
-            <h1 class="text-center text-xl ">Registar Plato</h1> <br>
-            <input type="text" placeholder="Nombre" class="w-full">
-            <input type="text" placeholder="Precio" class="w-full">
-            <x-ui.btn>Registrar Plato</x-ui.btn>
-        </form>
+        <table class="">
+            <thead>
+            <thead>
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2 text-left">ID</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Nombre</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Precio</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>                   
+                 <tr>
+                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
+                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
+                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
+                        <td class="border border-gray-300 px-4 py-2 text-left">
+                            <!-- Botón de Editar -->
+
+                            <div class="flex gap-2 ">
+                            <a href="editar-platos" class="border border-yellow-500 px-2 py-1 text text-left"><i class="bi bi-pencil-square text-yellow-500"></i></a>
+
+                            <form action="">
+
+                                <button type="submit" class="border border-red-500 px-2 py-1 text-left"><i class="bi bi-trash3 text-red-500"></i></button>
+                            </form>
+                            </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
     </x-ui.card>
+    
 </body>
 </html>

@@ -7,11 +7,12 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="h-screen bg-gray-100 flex justify-center items-center">
-    <x-ui.btn-back atras="administrar"></x-ui>
+    <x-ui.btn-back atras="administrar-mesas"></x-ui>
     <x-ui.card>
         <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
-            <h1 class="text-center text-xl ">No se que poner</h1> <br>
-            <x-ui.btn>No se que poner</x-ui.btn>
+            <h1 class="text-center text-xl ">Registrar Mesa</h1> <br>
+            <input type="text" placeholder="Número" class="w-full">
+            <x-ui.btn>Registrar Mesa</x-ui.btn>
         </form>
     </x-ui.card>
 </body>

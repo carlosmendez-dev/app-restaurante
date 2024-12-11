@@ -11,7 +11,10 @@ Route::get('/', function () {
 Route::get("/seleccionar-sucursal",function(){return view("seleccionar-sucursal");});
 Route::get("/menu",function(){return view("menu");});
 Route::get("/seleccionar-mesa",function(){return view("seleccionar-mesa");});
-Route::get("/registrar-cliente",function(){return view("registrar-cliente");});
+Route::get("/registrar-empleados",function(){return view("registrar-empleados");});
+Route::get("/registrar-mesas",function(){return view("registrar-mesas");});
+Route::get("/registrar-establecimientos",function(){return view("registrar-establecimientos");});
+Route::get("/registrar-platos",function(){return view("registrar-platos");});
 Route::get("/lista-productos",function(){return view("lista-productos");});
 Route::get("/realizar-pago",function(){return view("realizar-pago");});
 Route::get("/administrar",function(){return view("administrar");});
