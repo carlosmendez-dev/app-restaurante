@@ -21,16 +21,19 @@ Route::get("/reservar-mesa/{id}",[MesaController::class,"reserve"]);
 Route::get("/lista-productos",function(){return view("lista-productos");});
 Route::get("/realizar-pago",function(){return view("realizar-pago");});
 Route::get("/administrar",function(){return view("administrar");});
-Route::get("/administrar-mesas",function(){return view("administrar-mesas");});
+Route::get("/administrar-mesas",[MesaController::class,"index_admin"]);
 Route::get("/administrar-platos",function(){return view("administrar-platos");});
 Route::get("/administrar-clientes",function(){return view("administrar-clientes");});
 Route::get("/administrar-establecimientos",function(){return view("administrar-establecimientos");});
 Route::get("/administrar-empleados",function(){return view("administrar-empleados");});
-Route::get("/editar-mesas",function(){return view("editar-mesas");});
+Route::post("/editar-mesas",[MesaController::class,"edit_table"]);
 Route::get("/editar-platos",function(){return view("editar-platos");});
 Route::get("/editar-establecimiento",function(){return view("editar-establecimiento");});
 Route::get("/editar-empleados",function(){return view("editar-empleados");});
 Route::get("/lista-productos",function(){return view("lista-productos");});
+
+Route::post("actualizar-mesa",[MesaController::class,"update"]);
+Route::post("eliminar-mesa",[MesaController::class,"delete"]);
 
 Route::post("/lock-table",[MesaController::class,"lock_table"]);
 Route::post("/unlock-table",[MesaController::class,"unlock_table"]);

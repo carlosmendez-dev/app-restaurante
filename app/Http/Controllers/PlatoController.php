@@ -7,5 +7,4 @@ use App\Models\Plato;
 
 class PlatoController extends Controller
 {
-    //
 }
