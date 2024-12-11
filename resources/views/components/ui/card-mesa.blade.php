@@ -1,7 +1,7 @@
 <div class="bg-white border shadow-sm w-[200px] p-5 flex flex-col gap-3 h-[230px]">
     <h1 class="text-xl font-bold text-center">Mesa {{ $mesa }}</h1>
 
-    @if ($ocupado == 'false')
+    @if ($disponible == 1)
         <form action="{{ $url }}" method="GET" class="w-full">
             <input type="hidden" name="id">
             <div class="w-full h-20 bg-green-500 flex justify-center items-center ">

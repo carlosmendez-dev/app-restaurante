@@ -15,12 +15,9 @@
         <h1 class="text-3xl font-bold text-center mb-6">Seleccionar Mesa</h1>
         <!-- Lista de mesas en formato horizontal y centrado -->
         <div class="flex justify-center items-center gap-5 flex-wrap">
-            <x-ui.card-mesa mesa="1" ocupado="false" url="registrar-cliente"></x-ui.card-mesa>
-            <x-ui.card-mesa mesa="2" ocupado="true"  url="registrar-cliente"></x-ui.card-mesa>
-            <x-ui.card-mesa mesa="3" ocupado="true"  url="registrar-cliente"></x-ui.card-mesa>
-            <x-ui.card-mesa mesa="4" ocupado="false"  url="registrar-cliente"></x-ui.card-mesa>
-            <x-ui.card-mesa mesa="5" ocupado="false"  url="registrar-cliente"></x-ui.card-mesa>
-            <x-ui.card-mesa mesa="6" ocupado="true"  url="registrar-cliente"></x-ui.card-mesa>
+            @foreach($mesas as $mesa)
+            <x-ui.card-mesa mesa="{{$mesa->numero}}" disponible="{{$mesa->disponible}}" url="reservar-mesa/{{$mesa->id}}"></x-ui.card-mesa>
+            @endforeach
         </div>
     </div>
     
