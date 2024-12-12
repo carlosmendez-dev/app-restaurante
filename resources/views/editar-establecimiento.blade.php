@@ -9,11 +9,13 @@
 <body class="h-screen bg-gray-100 flex justify-center items-center">
     <x-ui.btn-back atras="administrar-establecimiento"></x-ui>
     <x-ui.card>
-        <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
+        <form action="/actualizar-establecimientos" method="POST" class="flex justify-center items-center flex-col gap-2 w-full">
+            @csrf
+            <input type="hidden" name="id" value="{{$establecimientos->id}}">
             <h1 class="text-center text-xl ">Editar Establecimiento</h1> <br>
-            <input type="text" placeholder="Nombre" class="w-full">
-            <input type="text" placeholder="Teléfono" class="w-full">
-            <input type="text" placeholder="Dirección" class="w-full">
+            <input type="text" placeholder="Nombre"  name="Nombre" class="w-full" value="{{$establecimientos->id}}">
+            <input type="text" placeholder="Telefono" name="telefono" class="w-full" value="{{$establecimientos->id}}">
+            <input type="text" placeholder="Dirección" name="Direcion" class="w-full" value="{{$establecimientos->id}}"+>
             <x-ui.btn>Aceptar</x-ui.btn>
         </form>
     </x-ui.card>

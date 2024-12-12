@@ -23,22 +23,20 @@
             </thead>
             <tbody>                   
                  <tr>
-
-                 @foreach($establecimientos as $establecimiento)
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
-                        <td class="border border-gray-300 px-4 py-2 text-left">
+                @foreach($establecimientos as $establecimiento)
+                        <td class="border border-gray-300 px-4 py-2 text-left">{{$establcimientos->id}}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-left">{{$establecimientos->nombre}}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-left">{{$establecimientos->numero}}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-left">{{$establecimientos->direccion}}</td>
                             <!-- Botón de Editar -->
 
                             <div class="flex gap-2 ">
-                            <a href="editar-establecimiento" class="border border-yellow-500 px-2 py-1 text text-left"><i class="bi bi-pencil-square text-yellow-500"></i></a>
-
-                            <form action="">
-
-                                <button type="submit" class="border border-red-500 px-2 py-1 text-left"><i class="bi bi-trash3 text-red-500"></i></button>
-                            </form>
+                            
+                                <form action="editar-establecimientos" method="POST">
+                                    <input type="hidden" name="id" value="{{$establecimientos->id}}">
+                                    <a href="editar-establecimiento" class="border border-yellow-500 px-2 py-1 text text-left"><i class="bi bi-pencil-square text-yellow-500"></i></a>
+                                    <button type="submit" class="border border-red-500 px-2 py-1 text-left"><i class="bi bi-trash3 text-red-500"></i></button>
+                                </form>
                             </div>
                         </td>
                 @endforeach
