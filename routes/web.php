@@ -30,7 +30,14 @@ Route::post("/editar-mesas",[MesaController::class,"edit_table"]);
 Route::get("/editar-platos",function(){return view("editar-platos");});
 Route::get("/editar-establecimiento",function(){return view("editar-establecimiento");});
 Route::get("/editar-empleados",function(){return view("editar-empleados");});
-Route::get("/lista-productos",[PlatoController::class,"list_products"]);
+Route::post("/lista-productos",[PlatoController::class,"list_products"]);
+
+
+Route::post("/agregar-producto",[PlatoController::class,"index"]);
+
+
+Route::get("/products",[PlatoController::class,"products"]);
+
 
 Route::post("actualizar-mesa",[MesaController::class,"update"]);
 Route::post("eliminar-mesa",[MesaController::class,"delete"]);
