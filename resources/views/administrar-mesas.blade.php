@@ -29,6 +29,7 @@
                             <!-- Botón de Editar -->
 
                             <div class="flex gap-2 justify-center">
+                                
                             <form action="editar-mesas" method="post">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$mesa->id}}">
@@ -41,6 +42,7 @@
                                 <input type="hidden" name="id" value="{{$mesa->id}}">
                                 <button type="submit" class="border border-red-500 px-2 py-1 text-left"><i class="bi bi-trash3 text-red-500"></i></button>
                             </form>
+
                             </div>
                         </td>
                     </tr>

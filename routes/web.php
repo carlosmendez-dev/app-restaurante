@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MesaController;
-use App\Models\Mesa;
+use App\Http\Controllers\PlatoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,7 +30,7 @@ Route::post("/editar-mesas",[MesaController::class,"edit_table"]);
 Route::get("/editar-platos",function(){return view("editar-platos");});
 Route::get("/editar-establecimiento",function(){return view("editar-establecimiento");});
 Route::get("/editar-empleados",function(){return view("editar-empleados");});
-Route::get("/lista-productos",function(){return view("lista-productos");});
+Route::get("/lista-productos",[PlatoController::class,"list_products"]);
 
 Route::post("actualizar-mesa",[MesaController::class,"update"]);
 Route::post("eliminar-mesa",[MesaController::class,"delete"]);
