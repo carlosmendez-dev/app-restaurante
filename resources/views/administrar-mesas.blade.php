@@ -12,7 +12,6 @@
     <x-ui.card>
         <table class="w-[600px]">
             <thead>
-            <thead>
                 <tr>
                     <th class="border border-gray-300 px-4 py-2 text-left">ID</th>
                     <th class="border border-gray-300 px-4 py-2 text-left">Número</th>

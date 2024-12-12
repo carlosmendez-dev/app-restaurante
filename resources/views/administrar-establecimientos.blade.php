@@ -23,6 +23,8 @@
             </thead>
             <tbody>                   
                  <tr>
+
+                 @foreach($establecimientos as $establecimiento)
                         <td class="border border-gray-300 px-4 py-2 text-left"></td>
                         <td class="border border-gray-300 px-4 py-2 text-left"></td>
                         <td class="border border-gray-300 px-4 py-2 text-left"></td>
@@ -39,6 +41,9 @@
                             </form>
                             </div>
                         </td>
+                @endforeach
+
+
                     </tr>
 
             </tbody>
