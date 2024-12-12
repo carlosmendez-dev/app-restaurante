@@ -9,12 +9,14 @@
 <body class="h-screen bg-gray-100 flex justify-center items-center">
     <x-ui.btn-back atras="administrar-platos"></x-ui>
     <x-ui.card>
-        <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
+        <form action="/actualizar-plato" method="post" class="flex justify-center items-center flex-col gap-2 w-full">
+            @csrf
+            <input type="hidden" name="id" value="{{$plato->id}}">
             <h1 class="text-center text-xl ">Editar Platos</h1> <br>
-            <input type="text" placeholder="Nombre" class="w-full">
-            <input type="text" placeholder="Precio" class="w-full">
+            <input type="text" placeholder="Nombre" class="w-full"value="{{platos->id}}">
+            <input type="text" placeholder="Precio" class="w-full"value="{{platos->id}}">
             <x-ui.btn>Aceptar</x-ui.btn>
         </form>
-    </x-ui.card>
+    </x-ui.card>  
 </body>
 </html>
