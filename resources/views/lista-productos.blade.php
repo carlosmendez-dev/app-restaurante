@@ -14,7 +14,7 @@
         <h1 class="text-center text-xl">Lista de Productos</h1>
         <form action="/agregar-producto" method="post">
             @csrf
-            <input type="hidden" value="{{$venta}}" >
+            <input type="hidden" name="id_venta" value="{{$venta}}">
             <x-ui.btn>Agregar Producto</x-ui.btn>
         </form>
         <!--Lista de Compra-->

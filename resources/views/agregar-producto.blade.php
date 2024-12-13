@@ -12,11 +12,10 @@
     <div>
         @foreach($platos as $plato)
         <form action="/agregar-detalle" method="post" class="flex justify-center items-center flex-col gap-2 w-full">
-            <input type="hidden" name="venta" value="{{$venta}}">
-            <input type="hidden" name="id" value="{{$plato->id}}">
+            @csrf
             <h1>{{$plato->nombre}}</h1>
-            <input type="hidden" name="plato_id" value="{{$plato->id}}">
-            <input type="hidden" name="mesa_id" value="{{$id}}">
+            <input type="hidden" name="id_plato" value="{{$plato->id}}">
+            <input type="hidden" name="id_venta" value="{{$venta->id}}">
             <x-ui.btn>Agregar</x-ui.btn>
             </form>
         @endforeach
