@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MesaController;
 use App\Http\Controllers\PlatoController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,7 +26,7 @@ Route::get("/administrar-mesas",[MesaController::class,"index_admin"]);
 Route::get("/administrar-platos",function(){return view("administrar-platos");});
 Route::get("/administrar-clientes",function(){return view("administrar-clientes");});
 Route::get("/administrar-establecimientos",function(){return view("administrar-establecimientos");});
-Route::get("/administrar-empleados",function(){return view("administrar-empleados");});
+Route::get("/administrar-empleados",[UserController::class,"index"]);
 Route::post("/editar-mesas",[MesaController::class,"edit_table"]);
 Route::get("/editar-platos",function(){return view("editar-platos");});
 Route::get("/editar-establecimiento",function(){return view("editar-establecimiento");});

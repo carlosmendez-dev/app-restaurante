@@ -10,26 +10,20 @@
 <x-ui.btn-add add="registrar-empleados">Agregar Empleados</x-ui>
 <x-ui.btn-back atras="administrar"></x-ui>
     <x-ui.card>
+        <h1>Administrar Empleados</h1>
         <table class="">
             <thead>
                 <tr>
                     <th class="border border-gray-300 px-4 py-2 text-left">ID</th>
                     <th class="border border-gray-300 px-4 py-2 text-left">Nombre</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Apellidos</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Teléfono</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Dirección</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left">Cargo</th>
                     <th class="border border-gray-300 px-4 py-2 text-left">Acciones</th>
                 </tr>
             </thead>
-            <tbody>                   
+            <tbody>       
+                @foreach($empleados as $empleado)            
                  <tr>
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
-                        <td class="border border-gray-300 px-4 py-2 text-left"></td>
+                        <td class="border border-gray-300 px-4 py-2 text-left">{{$empleado->id}}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-left">{{$empleado->name}}</td>
                         <td class="border border-gray-300 px-4 py-2 text-left">
                             <!-- Botón de Editar -->
 
@@ -43,7 +37,7 @@
                             </div>
                         </td>
                     </tr>
-
+                    @endforeach
             </tbody>
         </table>
     </x-ui.card>
