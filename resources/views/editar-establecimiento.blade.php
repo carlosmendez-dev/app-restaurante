@@ -11,11 +11,11 @@
     <x-ui.card>
         <form action="/actualizar-establecimientos" method="POST" class="flex justify-center items-center flex-col gap-2 w-full">
             @csrf
-            <input type="hidden" name="id" value="{{$establecimientos->id}}">
+            <input type="hidden" name="id" value="{{$establecimiento->id}}">
             <h1 class="text-center text-xl ">Editar Establecimiento</h1> <br>
-            <input type="text" placeholder="Nombre"  name="Nombre" class="w-full" value="{{$establecimientos->id}}">
-            <input type="text" placeholder="Telefono" name="telefono" class="w-full" value="{{$establecimientos->id}}">
-            <input type="text" placeholder="Dirección" name="Direcion" class="w-full" value="{{$establecimientos->id}}"+>
+            <input type="text" placeholder="Nombre"  name="Nombre" class="w-full" value="{{$establecimiento->id}}">
+            <input type="text" placeholder="Telefono" name="telefono" class="w-full" value="{{$establecimiento->id}}">
+            <input type="text" placeholder="Dirección" name="Direcion" class="w-full" value="{{$establecimiento->id}}"+>
             <x-ui.btn>Aceptar</x-ui.btn>
         </form>
     </x-ui.card>
