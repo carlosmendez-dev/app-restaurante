@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="h-screen bg-gray-100 flex justify-center items-center">
-<x-ui.btn-add add="registrar-empleados">Agregar Empleados</x-ui>
+<x-ui.btn-add add="register">Agregar Empleados</x-ui>
 <x-ui.btn-back atras="administrar"></x-ui>
     <x-ui.card>
         <h1>Administrar Empleados</h1>
