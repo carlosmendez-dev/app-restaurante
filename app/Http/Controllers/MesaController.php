@@ -57,6 +57,7 @@ class MesaController extends Controller
         $mesa = Mesa::find($id);
         $mesa->disponible = 0;
         $venta = new Venta();
+        $venta->id_mesa = $mesa->id;
         $venta->save();
         $mesa->save();
         return view("lista-productos",["venta"=>$venta,"id"=>$id]);
