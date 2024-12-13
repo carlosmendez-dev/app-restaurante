@@ -9,13 +9,18 @@
 <body class="bg-slate-100 h-screen flex justify-center items-center">
     <x-ui.btn-back atras="menu"></x-ui>
 <x-ui.card>
-    <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
-            <h1 class="text-center text-xl">Menú de Administración</h1> <br>
-            <x-ui.btn-menu link="administrar-mesas"><i class="bi bi-file"></i>Mesas</x-ui.btn-menu>
-            <x-ui.btn-menu link="administrar-platos"><i class="bi bi-cup-straw"></i>Platos</x-ui.btn-menu>
-            <x-ui.btn-menu link="administrar-establecimientos"><i class="bi bi-shop"></i>Establecimientos</x-ui.btn-menu>
-            <x-ui.btn-menu link="administrar-empleados"><i class="bi bi-person-vcard"></i>Empleados</x-ui.btn-menu>
-        </form>
-    </x-ui.card> 
+    <div>
+        @foreach($platos as $plato)
+        <form action="/agregar-detalle" method="post" class="flex justify-center items-center flex-col gap-2 w-full">
+            <input type="hidden" name="venta" value="{{$venta}}">
+            <input type="hidden" name="id" value="{{$plato->id}}">
+            <h1>{{$plato->nombre}}</h1>
+            <input type="hidden" name="plato_id" value="{{$plato->id}}">
+            <input type="hidden" name="mesa_id" value="{{$id}}">
+            <x-ui.btn>Agregar</x-ui.btn>
+            </form>
+        @endforeach
+    </div>
+        </x-ui.card> 
 </body>
 </html>

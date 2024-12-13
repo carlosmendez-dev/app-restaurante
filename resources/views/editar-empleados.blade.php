@@ -9,13 +9,12 @@
 <body class="h-screen bg-gray-100 flex justify-center items-center">
     <x-ui.btn-back atras="administrar-empleados"></x-ui> 
     <x-ui.card>
-        <form action="" class="flex justify-center items-center flex-col gap-2 w-full">
+        <form action="/actualizar-empleado" method="post" class="flex justify-center items-center flex-col gap-2 w-full">
+            @csrf
+            <input type="hidden" name="id" value="{{$empleado->id}}">
             <h1 class="text-center text-xl ">Editar Empleados</h1> <br>
-            <input type="text" placeholder="Nombre" class="w-full">
-            <input type="text" placeholder="Apellidos" class="w-full">
-            <input type="text" placeholder="Teléfono" class="w-full">
-            <input type="text" placeholder="Dirección" class="w-full">
-            <input type="text" placeholder="Cargo" class="w-full">
+            <input type="text" placeholder="Nombre" name="name" value="{{$empleado->name}}" class="w-full">
+            <input type="text" placeholder="Correo" name="email" value="{{$empleado->email}}" class="w-full">
             <x-ui.btn>Aceptar</x-ui.btn>
         </form>
     </x-ui.card>

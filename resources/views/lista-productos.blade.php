@@ -14,17 +14,12 @@
         <h1 class="text-center text-xl">Lista de Productos</h1>
         <form action="/agregar-producto" method="post">
             @csrf
-            <input type="hidden" name="id" value="{{$id}}" >
+            <input type="hidden" value="{{$venta}}" >
             <x-ui.btn>Agregar Producto</x-ui.btn>
         </form>
         <!--Lista de Compra-->
         <div class="bg-gray-100 min-h-[500px] max-h-[300px] w-[800px] flex flex-col gap-1 p-10 overflow-y-scroll">
-            <x-ui.product-item precio="12.5"></x-ui.product.item>
-            <x-ui.product-item precio="12.5"></x-ui.product.item>
-            <x-ui.product-item precio="12.5"></x-ui.product.item>
-            <x-ui.product-item precio="12.5"></x-ui.product.item>
-            <x-ui.product-item precio="12.5"></x-ui.product.item>
-            <x-ui.product-item precio="12.5"></x-ui.product.item>
+            foreach
             <x-ui.product-item precio="12.5"></x-ui.product.item>
         </div>
         

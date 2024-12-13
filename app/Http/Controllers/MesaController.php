@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mesa;
+use App\Models\Venta;
 
 class MesaController extends Controller
 {
@@ -55,8 +56,10 @@ class MesaController extends Controller
         $id = $request->id;
         $mesa = Mesa::find($id);
         $mesa->disponible = 0;
+        $venta = new Venta();
+        $venta->save();
         $mesa->save();
-        return view("lista-productos",["id"=>$id]);
+        return view("lista-productos",["venta"=>$venta,"id"=>$id]);
     }
 
     public function unlock_table(Request $request){

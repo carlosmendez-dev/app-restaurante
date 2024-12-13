@@ -16,6 +16,7 @@
                 <tr>
                     <th class="border border-gray-300 px-4 py-2 text-left">ID</th>
                     <th class="border border-gray-300 px-4 py-2 text-left">Nombre</th>
+                    <th class="border border-gray-300 px-4 py-2 text-left">Correo</th>
                     <th class="border border-gray-300 px-4 py-2 text-left">Acciones</th>
                 </tr>
             </thead>
@@ -24,14 +25,20 @@
                  <tr>
                         <td class="border border-gray-300 px-4 py-2 text-left">{{$empleado->id}}</td>
                         <td class="border border-gray-300 px-4 py-2 text-left">{{$empleado->name}}</td>
+                        <td class="border border-gray-300 px-4 py-2 text-left">{{$empleado->email}}</td>
                         <td class="border border-gray-300 px-4 py-2 text-left">
                             <!-- Botón de Editar -->
 
                             <div class="flex gap-2 ">
-                            <a href="editar-empleados" class="border border-yellow-500 px-2 py-1 text text-left"><i class="bi bi-pencil-square text-yellow-500"></i></a>
+                            <form action="/editar-empleado" method="post">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$empleado->id}}">
+                                <button type="submit" class="border border-yellow-500 px-2 py-1 text text-left"><i class="bi bi-pen text-red-500"></i></button>
+                            </form>
 
-                            <form action="">
-
+                            <form action="/eliminar-empleado" method="post">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$empleado->id}}">
                                 <button type="submit" class="border border-red-500 px-2 py-1 text-left"><i class="bi bi-trash3 text-red-500"></i></button>
                             </form>
                             </div>
