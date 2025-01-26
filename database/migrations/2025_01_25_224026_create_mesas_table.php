@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('mesas', function (Blueprint $table) {
             $table->id();
             $table->integer("numero");
+            // si esta disponible el valor es 1, si esta ocupado el valor es 0
             $table->boolean("disponible");
             $table->unsignedBigInteger("establecimiento_id");
             $table->timestamps();
