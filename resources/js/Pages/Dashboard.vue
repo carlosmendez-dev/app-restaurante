@@ -1,35 +1,26 @@
 <script setup>
 // importar ref, sirve para crear variables reactivas
-import {computed, ref, watch} from "vue";
+import {computed, onMounted, ref, watch} from "vue";
 import { router } from "@inertiajs/vue3";
 
 
 // componentes que usa dashboard
 import Mesa from "@/Components/Dashboard/Mesas/Mesa.vue";
 
+onMounted(()=>{
+    console.log("reservaciones: ",props.reservaciones);
+    props.platillos.forEach((plato)=>{
+        console.log(plato.nombre);
+    })
+})
+
 //obtener los datos que nos manda inertia
 const props = defineProps({
     establecimientos:Array, // nombre de la variable y que es
     establecimiento_actual:Object,
     mesas:Array,
-    reservas:Array
-})
-
-
-const listaMesas = ref(null);
-
-const mesasDisponibles = computed(()=>{
-    return listaMesas.filter(mesa => me)
-})
-
-watch(()=>props.mesas,(newList)=>{
-    listaMesas.value =  newList.map((mesa)=>{
-        return {
-            id:mesa.id,
-            numero:mesa.numero,
-            disponible:true
-        }
-    })
+    reservaciones:Array,
+    platillos:Array
 })
 
 async function cambiarEstablecimiento(){
@@ -65,28 +56,8 @@ const verModal = ref(true);
         </div>
 
         <!--barra de navegacion-->
-        <nav class="flex flex-col gap-3 bg-blue-500 w-[300px] p-3">
-            <h1 class="text-white">SUCURSAL: {{ sucursal }}</h1>
-            
-            <hr>
-
-            <button @click="vista=0" class="text-left text-white font-bold text-lg border-gray-600"><i class="bi bi-archive"></i> Mesas</button>
-            <button @click="vista=1" class="text-left text-white font-bold text-lg border-gray-600"><i class="bi bi-card-checklist"></i> Reservaciones</button>
-            
-            <hr>
-
-            <h3 class="font-bold text-white text-lg">CRUD</h3>
-            <button @click="vista=2" class="text-left text-white font-bold text-lg border-gray-600"><i class="bi bi-cup-hot"></i> Platillos</button>
-        </nav>
-
-        <!--Contenido-->
-        <div class="bg-white w-full">
-
-
-            <!--Vista de mesas-->
-            <section v-if="vista==0" class="flex flex-col">
-
-                <table class="border text-left">
+        <nav class="flex flex-col gap-3 bg-blue-500 w-[300px] p-3 text-white">
+            <table class="text-left">
                     <thead>
                         <tr>
                             <th>Clave</th>
@@ -99,16 +70,38 @@ const verModal = ref(true);
                         <tr><td>Direccion</td> <td>{{ establecimiento_actual.direccion }}</td></tr>
                     </tbody>
                 </table>
+            <hr>
 
-                    
-                    <div class="w-full h-full">
-                        <h1 class="font-bold text-lg text-center bg-slate-100">Mesas</h1>
+            <button @click="vista=0" class="text-left text-white font-bold text-lg border-gray-600"><i class="bi bi-archive me-2"></i>Restaurante</button>
+            <button @click="vista=1" class="text-left text-white font-bold text-lg border-gray-600"><i class="bi bi-card-checklist me-2"></i>Tickets</button>
+        </nav>
+
+        <!--Contenido-->
+        <div class="bg-white w-full">
+
+
+            <!--Vista de mesas-->
+            <section v-if="vista==0" class="flex flex-col">
+
+                    <div class="flex">
+
+                        <!--Mesas disponibles-->
+                        <div class="w-full h-full">
+                            <h1 class="font-bold text-lg text-center bg-slate-100">Mesas</h1>
                         <div class="flex justify-center items-center gap-2 flex-wrap border p-10">
-                        <Mesa v-for="mesa in listaMesas" :mesa="mesa"></Mesa>
+                            <Mesa v-for="mesa in props.mesas" :mesa="mesa" :platillos="props.platillos"></Mesa>
+                        </div>
                     </div>
 
-
-            </div>
+                    <!--Mesas disponibles-->
+                    <div class="w-full h-full">
+                        <h1 class="font-bold text-lg text-center bg-slate-100">Reservaciones</h1>
+                        <div class="flex justify-center items-center gap-2 flex-wrap border p-10">
+                            <Mesa v-for="mesa in props.reservaciones" :mesa="mesa" :platillos="props.platillos"></Mesa>
+                        </div>
+                    </div>
+                
+                </div>
                 
             </section>
 

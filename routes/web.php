@@ -20,6 +20,8 @@ Route::get('/', function () {
 Route::get('/dashboard',[DashboardController::class,"index"])->middleware(['auth', 'verified'])->name('dashboard');
 // cambiar sucursal
 Route::patch("update/{id}",[DashboardController::class,"update"]);
+Route::post("reservar",[DashboardController::class,"reservar"]);
+Route::post("cancelar-reservacion",[DashboardController::class,"cancelar_reservacion"]);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
