@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <article class="p-3 shadow border w-[200px]" v-if="props.mesa.disponible==1">
+    <article class="p-3 shadow border w-[200px]" v-if="props.mesa.disponible==true">
 
         <div class="bg-green-500 h-[120px] flex justify-center items-center">
             <i class="bi bi-unlock text-white text-3xl"></i>

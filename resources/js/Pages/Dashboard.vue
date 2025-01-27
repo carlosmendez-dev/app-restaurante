@@ -1,6 +1,7 @@
 <script setup>
 // importar ref, sirve para crear variables reactivas
-import {ref} from "vue";
+import {computed, ref, watch} from "vue";
+import { router } from "@inertiajs/vue3";
 
 
 // componentes que usa dashboard
@@ -10,14 +11,36 @@ import Mesa from "@/Components/Dashboard/Mesas/Mesa.vue";
 const props = defineProps({
     establecimientos:Array, // nombre de la variable y que es
     establecimiento_actual:Object,
-    mesas:Array
+    mesas:Array,
+    reservas:Array
 })
+
+
+const listaMesas = ref(null);
+
+const mesasDisponibles = computed(()=>{
+    return listaMesas.filter(mesa => me)
+})
+
+watch(()=>props.mesas,(newList)=>{
+    listaMesas.value =  newList.map((mesa)=>{
+        return {
+            id:mesa.id,
+            numero:mesa.numero,
+            disponible:true
+        }
+    })
+})
+
+async function cambiarEstablecimiento(){
+router.patch(`/update/${sucursal.value}`);
+}
 
 // crear variables con ref
 const vista = ref(0);
-const sucursal = ref(null);
+const sucursal = ref(2);
 
-const verModal = ref(false);
+const verModal = ref(true);
 </script>
 
 <!--el template es como un body-->
@@ -33,10 +56,10 @@ const verModal = ref(false);
             
             <dialog open class="p-6 flex flex-col w-[400px] gap-2">
                 <h1 class="font-bold text-lg">Seleccionar Sucursal</h1>
-                <select name="" id="" v-model="sucursal">
-                    <option :value="establecimiento.nombre" v-for="establecimiento in props.establecimientos">{{ establecimiento.nombre }}</option>
+                <select name="" id="" v-model="sucursal" @change="cambiarEstablecimiento">
+                    <option :value="establecimiento.id" v-for="establecimiento in props.establecimientos">{{ establecimiento.nombre }}</option>
                 </select>
-                <button class="bg-blue-500 text-white p-2" @click="verModal=false">Aceptar</button>
+                <button class="bg-blue-500 text-white p-2" @click="verModal = false">Aceptar</button>
             </dialog>
             
         </div>
@@ -63,7 +86,7 @@ const verModal = ref(false);
             <!--Vista de mesas-->
             <section v-if="vista==0" class="flex flex-col">
 
-                <table class="border w-[400px]">
+                <table class="border text-left">
                     <thead>
                         <tr>
                             <th>Clave</th>
@@ -77,10 +100,16 @@ const verModal = ref(false);
                     </tbody>
                 </table>
 
-                <div class="flex justify-center items-center gap-2">
-                    <Mesa v-for="mesa in props.mesas" :mesa="mesa"></Mesa>
-                </div>
+                    
+                    <div class="w-full h-full">
+                        <h1 class="font-bold text-lg text-center bg-slate-100">Mesas</h1>
+                        <div class="flex justify-center items-center gap-2 flex-wrap border p-10">
+                        <Mesa v-for="mesa in listaMesas" :mesa="mesa"></Mesa>
+                    </div>
 
+
+            </div>
+                
             </section>
 
 
