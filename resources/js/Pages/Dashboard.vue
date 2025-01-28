@@ -43,20 +43,31 @@ const verModal = ref(true);
        
        
         <!--Modal seleccionar establecimiento-->
+        <Transition>
         <div class="fixed w-screen h-screen bg-black bg-opacity-25 flex justify-center items-center" v-if="verModal==true">
-            
-            <dialog open class="p-6 flex flex-col w-[400px] gap-2">
-                <h1 class="font-bold text-lg">Seleccionar Sucursal</h1>
-                <select name="" id="" v-model="sucursal" @change="cambiarEstablecimiento">
-                    <option :value="establecimiento.id" v-for="establecimiento in props.establecimientos">{{ establecimiento.nombre }}</option>
-                </select>
-                <button class="bg-blue-500 text-white p-2" @click="verModal = false">Aceptar</button>
-            </dialog>
-            
-        </div>
+
+
+                <dialog open class="p-6 flex flex-col w-[400px] gap-2 rounded-xl shadow-xl">
+                    <div class="flex justify-between">
+                        <h1 class="font-bold text-lg">Seleccionar Sucursal</h1>
+                        <button class="bg-gray-200 size-[30px] rounded-full"><i class="bi bi-x text-2xl"></i></button>
+                    </div>
+                    
+                    <div class="flex flex-col gap-2 p-3">
+                        <select name="" id="" v-model="sucursal" @change="cambiarEstablecimiento" class="shadow border-none rounded">
+                            <option :value="establecimiento.id" v-for="establecimiento in props.establecimientos">{{ establecimiento.nombre }}</option>
+                        </select>
+                        <button class="bg-blue-500 text-white p-2 rounded" @click="verModal = false">Aceptar</button>
+                    </div>
+                    
+                </dialog>
+                
+            </div>
+        </Transition>
+
 
         <!--barra de navegacion-->
-        <nav class="flex flex-col gap-3 bg-blue-500 w-[300px] p-3 text-white">
+        <nav class="flex flex-col gap-3 bg-gray-100 border w-[350px] p-3">
             <table class="text-left">
                     <thead>
                         <tr>
@@ -72,8 +83,8 @@ const verModal = ref(true);
                 </table>
             <hr>
 
-            <button @click="vista=0" class="text-left text-white font-bold text-lg border-gray-600"><i class="bi bi-archive me-2"></i>Restaurante</button>
-            <button @click="vista=1" class="text-left text-white font-bold text-lg border-gray-600"><i class="bi bi-card-checklist me-2"></i>Tickets</button>
+            <button @click="vista=0" class="text-left opacity-75 border-gray-600"><i class="bi bi-archive me-2"></i>Restaurante</button>
+            <button @click="vista=1" class="text-left opacity-75 border-gray-600"><i class="bi bi-card-checklist me-2"></i>Tickets</button>
         </nav>
 
         <!--Contenido-->
@@ -112,3 +123,16 @@ const verModal = ref(true);
 
     </main>
 </template>
+
+<style>
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
